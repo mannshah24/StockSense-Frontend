@@ -39,8 +39,8 @@ export interface NewsItem {
 // Mock data for demonstration
 export const mockPortfolio: Stock[] = [
   {
-    symbol: 'RELIANCE',
-    name: 'Reliance Industries Ltd',
+    symbol: 'APPLE',
+    name: 'Apple Inc',
     currentPrice: 2485.50,
     purchasePrice: 2350.00,
     quantity: 25,
@@ -58,8 +58,8 @@ export const mockPortfolio: Stock[] = [
     ]
   },
   {
-    symbol: 'TCS',
-    name: 'Tata Consultancy Services',
+    symbol: 'GOOGLE',
+    name: 'GOOGL',
     currentPrice: 3542.75,
     purchasePrice: 3680.00,
     quantity: 15,
@@ -77,8 +77,8 @@ export const mockPortfolio: Stock[] = [
     ]
   },
   {
-    symbol: 'HDFCBANK',
-    name: 'HDFC Bank Limited',
+    symbol: 'MICROSOFT',
+    name: 'Microsoft Corp',
     currentPrice: 1642.30,
     purchasePrice: 1580.00,
     quantity: 30,
@@ -177,7 +177,7 @@ export const marketIndices: MarketIndex[] = [
 
 export const aiInsights: AIInsight[] = [
   {
-    symbol: 'RELIANCE',
+    symbol: 'APPLE',
     action: 'BUY',
     confidence: 85,
     timeFrame: '1-3 days',
@@ -186,7 +186,7 @@ export const aiInsights: AIInsight[] = [
     stopLoss: 2400.00
   },
   {
-    symbol: 'TCS',
+    symbol: 'GOOGLE',
     action: 'HOLD',
     confidence: 72,
     timeFrame: '1-2 weeks',
@@ -195,7 +195,7 @@ export const aiInsights: AIInsight[] = [
     stopLoss: 3450.00
   },
   {
-    symbol: 'HDFCBANK',
+    symbol: 'MICROSOFT',
     action: 'BUY',
     confidence: 78,
     timeFrame: '3-5 days',
