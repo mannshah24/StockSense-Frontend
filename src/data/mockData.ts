@@ -41,13 +41,13 @@ export const mockPortfolio: Stock[] = [
   {
     symbol: 'APPLE',
     name: 'Apple Inc',
-    currentPrice: 2485.50,
-    purchasePrice: 2350.00,
+    currentPrice: 157.50,
+    purchasePrice: 147.00,
     quantity: 25,
     change: 12.30,
     changePercent: 0.50,
-    dayPnL: 307.50,
-    totalPnL: 3387.50,
+    dayPnL: 5.46,
+    totalPnL: 262.50,
     chartData: [
       { time: '09:15', price: 2473.20 },
       { time: '10:00', price: 2478.90 },
@@ -60,13 +60,13 @@ export const mockPortfolio: Stock[] = [
   {
     symbol: 'GOOGLE',
     name: 'GOOGL',
-    currentPrice: 3542.75,
-    purchasePrice: 3680.00,
+    currentPrice: 213.53,
+    purchasePrice: 221.78,
     quantity: 15,
     change: -8.25,
     changePercent: -0.23,
     dayPnL: -123.75,
-    totalPnL: -2058.75,
+    totalPnL: -123.75,
     chartData: [
       { time: '09:15', price: 3551.00 },
       { time: '10:00', price: 3545.30 },
@@ -79,13 +79,13 @@ export const mockPortfolio: Stock[] = [
   {
     symbol: 'MICROSOFT',
     name: 'Microsoft Corp',
-    currentPrice: 1642.30,
-    purchasePrice: 1580.00,
+    currentPrice: 506.69,
+    purchasePrice: 497.00,
     quantity: 30,
-    change: 5.70,
+    change: 9.69,
     changePercent: 0.35,
     dayPnL: 171.00,
-    totalPnL: 1869.00,
+    totalPnL: 290.70,
     chartData: [
       { time: '09:15', price: 1636.60 },
       { time: '10:00', price: 1639.85 },
@@ -95,63 +95,63 @@ export const mockPortfolio: Stock[] = [
       { time: '14:00', price: 1642.30 }
     ]
   },
-  {
-    symbol: 'INFY',
-    name: 'Infosys Limited',
-    currentPrice: 1789.45,
-    purchasePrice: 1820.00,
-    quantity: 20,
-    change: -2.85,
-    changePercent: -0.16,
-    dayPnL: -57.00,
-    totalPnL: -611.00,
-    chartData: [
-      { time: '09:15', price: 1792.30 },
-      { time: '10:00', price: 1790.15 },
-      { time: '11:00', price: 1789.45 },
-      { time: '12:00', price: 1787.20 },
-      { time: '13:00', price: 1791.60 },
-      { time: '14:00', price: 1789.45 }
-    ]
-  },
-  {
-    symbol: 'ICICIBANK',
-    name: 'ICICI Bank Limited',
-    currentPrice: 1178.90,
-    purchasePrice: 1150.00,
-    quantity: 40,
-    change: 4.20,
-    changePercent: 0.36,
-    dayPnL: 168.00,
-    totalPnL: 1156.00,
-    chartData: [
-      { time: '09:15', price: 1174.70 },
-      { time: '10:00', price: 1176.50 },
-      { time: '11:00', price: 1178.90 },
-      { time: '12:00', price: 1180.25 },
-      { time: '13:00', price: 1177.40 },
-      { time: '14:00', price: 1178.90 }
-    ]
-  },
-  {
-    symbol: 'WIPRO',
-    name: 'Wipro Limited',
-    currentPrice: 452.35,
-    purchasePrice: 480.00,
-    quantity: 50,
-    change: -1.25,
-    changePercent: -0.28,
-    dayPnL: -62.50,
-    totalPnL: -1382.50,
-    chartData: [
-      { time: '09:15', price: 453.60 },
-      { time: '10:00', price: 452.85 },
-      { time: '11:00', price: 452.35 },
-      { time: '12:00', price: 451.70 },
-      { time: '13:00', price: 453.10 },
-      { time: '14:00', price: 452.35 }
-    ]
-  }
+  // {
+  //   symbol: 'INFY',
+  //   name: 'Infosys Limited',
+  //   currentPrice: 1789.45,
+  //   purchasePrice: 1820.00,
+  //   quantity: 20,
+  //   change: -2.85,
+  //   changePercent: -0.16,
+  //   dayPnL: -57.00,
+  //   totalPnL: -611.00,
+  //   chartData: [
+  //     { time: '09:15', price: 1792.30 },
+  //     { time: '10:00', price: 1790.15 },
+  //     { time: '11:00', price: 1789.45 },
+  //     { time: '12:00', price: 1787.20 },
+  //     { time: '13:00', price: 1791.60 },
+  //     { time: '14:00', price: 1789.45 }
+  //   ]
+  // },
+  // {
+  //   symbol: 'ICICIBANK',
+  //   name: 'ICICI Bank Limited',
+  //   currentPrice: 1178.90,
+  //   purchasePrice: 1150.00,
+  //   quantity: 40,
+  //   change: 4.20,
+  //   changePercent: 0.36,
+  //   dayPnL: 168.00,
+  //   totalPnL: 1156.00,
+  //   chartData: [
+  //     { time: '09:15', price: 1174.70 },
+  //     { time: '10:00', price: 1176.50 },
+  //     { time: '11:00', price: 1178.90 },
+  //     { time: '12:00', price: 1180.25 },
+  //     { time: '13:00', price: 1177.40 },
+  //     { time: '14:00', price: 1178.90 }
+  //   ]
+  // },
+  // {
+  //   symbol: 'WIPRO',
+  //   name: 'Wipro Limited',
+  //   currentPrice: 452.35,
+  //   purchasePrice: 480.00,
+  //   quantity: 50,
+  //   change: -1.25,
+  //   changePercent: -0.28,
+  //   dayPnL: -62.50,
+  //   totalPnL: -1382.50,
+  //   chartData: [
+  //     { time: '09:15', price: 453.60 },
+  //     { time: '10:00', price: 452.85 },
+  //     { time: '11:00', price: 452.35 },
+  //     { time: '12:00', price: 451.70 },
+  //     { time: '13:00', price: 453.10 },
+  //     { time: '14:00', price: 452.35 }
+  //   ]
+  // }
 ];
 
 export const marketIndices: MarketIndex[] = [
