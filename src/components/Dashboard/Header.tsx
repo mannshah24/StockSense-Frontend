@@ -1,13 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, Bell, User, LogOut, Settings, Star, CreditCard } from 'lucide-react';
 import { SearchBar } from '../Common/SearchBar';
 import { ThemeToggle } from '../Common/ThemeToggle';
 import { useAuth } from '../../context/AuthContext';
 import stockSenseLogo from '../../assets/stocksense-logo.png';
+import { NotificationPanel } from '../Common/NotificationPanel';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const { user, logout } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+
+  // Fetch notifications from API
+  const [notifications, setNotifications] = useState<{ id: number; message: string; type?: 'critical' | 'info' }[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      setLoading(true);
+      try {
+        // Replace with your actual API endpoint
+        const response = await fetch('https://api.example.com/notifications');
+        const data = await response.json();
+        setNotifications(data.notifications || []);
+      } catch (error) {
+        // Optionally handle error
+        setNotifications([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (showNotifications) {
+      fetchNotifications();
+    }
+  }, [showNotifications]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
@@ -24,9 +52,12 @@ export const Header: React.FC = () => {
               <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground smooth-transition">
                 About Us
               </a>
-              <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground smooth-transition">
+              <Link
+                to="/live-news"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground smooth-transition"
+              >
                 Live Stock News
-              </a>
+              </Link>
             </nav>
             
             <div className="w-64">
@@ -37,11 +68,20 @@ export const Header: React.FC = () => {
           {/* Right Section */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            
-            <button className="relative p-2 text-muted-foreground hover:text-foreground smooth-transition">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-primary"></span>
-            </button>
+
+            {/* Notification Bell */}
+            <div className="relative">
+              <button
+                className="relative p-2 text-muted-foreground hover:text-foreground smooth-transition"
+                onClick={() => setShowNotifications((prev) => !prev)}
+              >
+                <Bell className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-primary"></span>
+              </button>
+              {showNotifications && (
+                <NotificationPanel notifications={notifications} loading={loading} />
+              )}
+            </div>
 
             {/* User Menu */}
             <div className="relative">

@@ -111,3 +111,65 @@ export const AIInsights: React.FC = () => {
     </div>
   );
 };
+
+
+// // ... in your AIInsights.jsx file
+// import React, { useEffect, useState } from 'react';
+// import forecastServices from '../../services/model_services';
+// // ... other imports
+
+// export const AIInsights = ({ ticker }) => {
+//   const [insights, setInsights] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+
+//   useEffect(() => {
+//     const fetchInsights = async () => {
+//       try {
+//         setLoading(true);
+//         // const response = await fetch(`http://localhost:8001/get_chart_data/${ticker}`);
+//         // const data = await response.json();
+
+//         // Filter the chart data to find 'buy' or 'sell' signals
+//         const data = await forecastServices.getForecastChartData(ticker);
+//         const filteredInsights = data.chartData
+//           .filter(d => d.signal === 'buy' || d.signal === 'sell')
+//           // Map to a format suitable for your component
+//           .map(d => ({
+//             symbol: ticker.toUpperCase(),
+//             timeFrame: 'Daily',
+//             action: d.signal.toUpperCase(),
+//             confidence: 85, // Use a static value for now
+//             reason: `AI detected a signal on ${d.date}.`,
+//             targetPrice: d.predicted,
+//             stopLoss: null,
+//           }));
+//         setInsights(filteredInsights);
+//       } catch (e) {
+//         setError(e.message);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchInsights();
+//   }, [ticker]);
+
+//   if (loading) return <div>Loading insights...</div>;
+//   if (error) return <div>Error: {error}</div>;
+
+//   return (
+//     <div className="space-y-4">
+//       {/* ... rest of your component logic */}
+//       <div className="space-y-3">
+//         {insights.map((insight, index) => (
+//           // Use the `insight` object to render the card
+//           <div key={index} className="glass-card rounded-lg p-4">
+//             {/* ... render card content using insight.symbol, insight.action, etc. */}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
